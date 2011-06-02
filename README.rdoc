@@ -1,0 +1,34 @@
+= rMeetup
+
+A simple Ruby gem to access the Meetup API.
+
+== Code Sample
+
+Sample code is worth a thousand words:
+
+  RMeetup::Client.api_key = "API_KEY"
+  results = RMeetup::Client.fetch(:events,{:zip => "ZIP_CODE"})
+  results.each do |result|
+    # Do something with the result
+  end
+  
+RMeetup::Client.fetch takes a data model type and set of options as arguments. Possible data models are:
+
+* :topics
+* :cities
+* :members
+* :rsvps
+* :events
+* :groups
+* :comments
+* :photos
+ 
+The options that may be passed can be found on the Meetup API documentation. Please see http://www.meetup.com/meetup_api/docs/ and look up the model that you are calling (i.e. for :events, look at the API call "GET /events" at http://www.meetup.com/meetup_api/docs/events/).
+
+== Installation
+
+  gem install rMeetup
+
+== Credit
+
+Credit goes to Jared Pace for building the initial iteration of this gem. I just forked it, expanded and documented it a but.
