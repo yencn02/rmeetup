@@ -5,13 +5,21 @@ A simple Ruby gem to access the Meetup API.
 == Code Sample
 
 Sample code is worth a thousand words:
-
+  
+  #For non ssl request
   RMeetup::Client.api_key = "API_KEY"
   results = RMeetup::Client.fetch(:events,{:zip => "ZIP_CODE"})
   results.each do |result|
     # Do something with the result
   end
   
+  #For ssl request
+  RMeetup::Client.api_key = "API_KEY"
+  results = RMeetup::Client.fetch(:events,{:zip => "ZIP_CODE"})
+  results.each do |result|
+    # Do something with the result
+  end
+
 RMeetup::Client.fetch takes a data model type and set of options as arguments. Possible data models are:
 
 * :topics
